@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ultimate Launcher — a beautiful unofficial Minecraft launcher</title>
+<meta name="description" content="Ultimate Launcher is a free, unofficial Minecraft launcher with Liquid Glass design, Modrinth modpack import, custom skins and themes. Your data stays on your PC.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div>
+<nav class="glass">
+  <a class="brand" href="#"><i></i>Ultimate Launcher</a>
+  <div><a href="#features">Features</a><a href="privacy.html">Privacy</a><a href="#contact">Contact</a><a class="btn dl" href="#download">Download</a></div>
+</nav>
+<main>
+  <header class="hero">
+    <span class="pill">Unofficial · Free · Local-first</span>
+    <h1>Ultimate Launcher is made to<br><span>fulfill user requirements</span></h1>
+    <p class="lead">Create builds, import Modrinth modpacks, change skins and make the launcher look exactly the way you like. All your data stays on your own PC.</p>
+    <div class="cta"><a class="btn dl" id="download" href="#download">Download for Windows</a><a class="btn ghost" href="privacy.html">Privacy Policy</a></div>
+    <div class="glass mock" aria-hidden="true">
+      <div class="mock-bar"><i></i><i></i><i></i></div>
+      <div class="mock-body">
+        <div class="mock-side"><b>Builds</b><b>Skins</b><b>Log</b><b>Settings</b></div>
+        <div class="mock-cards">
+          <div><strong>Fabric Survival</strong>Minecraft 1.20.1<em style="--p:78%"></em></div>
+          <div><strong>Vanilla</strong>Minecraft 1.21<em style="--p:100%"></em></div>
+          <div><strong>Modrinth Pack</strong>NeoForge 21.1<em style="--p:42%"></em></div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <section id="features">
+    <h2>Everything you need to play</h2>
+    <p class="sub">Simple, fast and fully customizable.</p>
+    <div class="grid">
+      <article class="glass card"><div class="ico">🧱</div><h3>Build wizard</h3><p>Create separate builds in a few clicks with Vanilla, Fabric, Forge or NeoForge.</p></article>
+      <article class="glass card"><div class="ico">📦</div><h3>Modrinth import</h3><p>Import .mrpack modpacks. Mods, resource packs and shaders are downloaded automatically.</p></article>
+      <article class="glass card"><div class="ico">🧍</div><h3>3D skins</h3><p>Preview and change your skin with an interactive 3D model, including slim and classic models.</p></article>
+      <article class="glass card"><div class="ico">🎨</div><h3>Your colors</h3><p>Ready-made themes and a color picker for every accent. Make the launcher yours.</p></article>
+      <article class="glass card"><div class="ico">🖼️</div><h3>Custom background</h3><p>Use a solid color, an image or a looping video, with adjustable blur.</p></article>
+      <article class="glass card"><div class="ico">🌍</div><h3>Languages &amp; Discord</h3><p>Translations are plain .lang files. Optional Discord Rich Presence shows what you play.</p></article>
+    </div>
+  </section>
+
+  <section>
+    <div class="glass notice">
+      <div class="ico">⚠️</div>
+      <div><b>Not an official product.</b>
+      <p>Ultimate Launcher is an independent, unofficial launcher. It is <b>NOT</b> an official Minecraft launcher and has <b>NO affiliation</b> with Microsoft or Mojang. Minecraft is a trademark of Mojang Synergies AB.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="glass notice" style="border-color:rgba(176,194,204,.4)">
+      <div class="ico">🔒</div>
+      <div><b style="color:#dbe6ec">Your data stays with you.</b>
+      <p>Your Microsoft account data and settings are stored locally on your computer. Read the <a href="privacy.html" style="color:#dbe6ec">Privacy Policy</a>.</p></div>
+    </div>
+  </section>
+  <section id="contact">
+    <h2>Contact us</h2>
+    <p class="sub">Questions, bug reports or ideas? Write to us or join our community.</p>
+    <div class="glass notice" style="justify-content:center;align-items:center;text-align:center;flex-wrap:wrap">
+      <a class="btn" href="mailto:ultimatelaunchersupport@gmail.com">✉ ultimatelaunchersupport@gmail.com</a>
+      <a class="btn ghost" href="https://discord.gg/9VyWGUGzDT" target="_blank" rel="noopener">💬 Join our Discord</a>
+    </div>
+  </section>
+</main>
+<footer>
+  <p>© 2026 Ultimate Launcher · <a href="privacy.html">Privacy Policy</a> · <a href="mailto:ultimatelaunchersupport@gmail.com">ultimatelaunchersupport@gmail.com</a> · <a href="https://discord.gg/9VyWGUGzDT" target="_blank" rel="noopener">Discord</a></p>
+  <p>Not an official Minecraft product. Not approved by or associated with Mojang or Microsoft.</p>
+</footer>
+<div class="modal" id="dlModal" role="alertdialog" aria-modal="true" aria-labelledby="dlTitle" aria-describedby="dlText">
+  <div class="glass modal-box">
+    <div class="modal-ico">!</div>
+    <h3 id="dlTitle">Error</h3>
+    <p id="dlText">Work in progress! Still in beta.</p>
+    <button class="btn" id="dlOk" type="button">OK</button>
+  </div>
+</div>
+<script>
+(function(){
+  var m=document.getElementById('dlModal'),ok=document.getElementById('dlOk');
+  function open(){m.classList.add('open');ok.focus()}
+  function close(){m.classList.remove('open')}
+  document.querySelectorAll('.dl').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();open()})});
+  ok.addEventListener('click',close);
+  m.addEventListener('click',function(e){if(e.target===m)close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close()});
+  if(location.hash==='#download')open();
+})();
+</script>
+</body>
+</html>
